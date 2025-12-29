@@ -290,13 +290,13 @@ const AdminLayout = () => {
         {/* Main Content */}
         <main 
           className={cn(
-            "flex-1 transition-all duration-300",
+            "flex-1 transition-all duration-300 overflow-x-hidden",
             sidebarCollapsed ? "p-6 lg:px-4 lg:py-8" : "p-6 lg:p-8"
           )}
           style={sidebarCollapsed ? { marginLeft: 'calc(80px + 1rem)' } : { marginLeft: 'calc(288px + 1rem)' }}
         >
           <div className={cn(
-            "mx-auto",
+            "mx-auto w-full",
             sidebarCollapsed ? "max-w-full" : "max-w-[1400px]"
           )}>
             <Outlet />

@@ -395,8 +395,8 @@ const CollegeDriveDetails = () => {
                 </div>
 
                 {/* Students Table */}
-                <div className="overflow-x-auto">
-                  <Table>
+                <div className="w-full overflow-x-auto">
+                  <Table className="w-full">
                     <TableHeader>
                       <TableRow className="bg-secondary/30 border-b border-border/30">
                         <TableHead className="font-semibold text-foreground/80">Name</TableHead>

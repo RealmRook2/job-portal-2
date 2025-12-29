@@ -287,8 +287,8 @@ const JobManagement = () => {
 
       <Card className="border-0 shadow-2xl shadow-[#03093a]/10 bg-gradient-to-br from-white via-white to-[#03093a]/5 backdrop-blur-xl rounded-3xl overflow-hidden border border-[#03093a]/10">
         <CardContent className="p-0">
-          <div className="overflow-x-auto">
-            <Table>
+          <div className="w-full overflow-x-auto">
+            <Table className="w-full">
               <TableHeader>
                 <TableRow className="bg-gradient-to-r from-[#03093a]/10 via-[#03093a]/8 to-[#03093a]/10 border-b-2 border-[#03093a]/20 shadow-sm">
                   <TableHead className="font-bold text-[#03093a] text-sm uppercase tracking-wider w-12">

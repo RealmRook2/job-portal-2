@@ -7,6 +7,11 @@ All colors MUST be HSL.
 */
 
 @layer base {
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
   :root {
     /* Ultra Clean Minimalistic Color Palette - Matching Image */
     --background: 0 0% 99.5%; /* Almost Pure White - Very Light Gray */
@@ -76,6 +81,34 @@ All colors MUST be HSL.
     border: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: var(--shadow-md);
     border-radius: 1rem;
+  }
+
+  /* Hide scrollbar when not needed */
+  .overflow-x-auto {
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .overflow-x-auto::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .overflow-x-auto::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .overflow-x-auto::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+
+  .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  /* Only show scrollbar when content overflows */
+  .overflow-x-auto:not(:hover)::-webkit-scrollbar-thumb {
+    background: transparent;
   }
   
   .modern-card {

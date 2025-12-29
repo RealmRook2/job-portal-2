@@ -296,12 +296,12 @@ const HRAdminManagement = () => {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 w-full overflow-x-hidden">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="flex items-center justify-between pb-4 border-b border-border/30"
+        className="flex items-center justify-between pb-4 border-b border-border/30 flex-wrap gap-4"
       >
         <div>
           <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent tracking-tight">
@@ -318,7 +318,7 @@ const HRAdminManagement = () => {
       {/* Reference-style Filter Bar */}
       <Card className="border-0 shadow-xl shadow-black/5 bg-white/80 backdrop-blur-xl rounded-3xl">
         <CardContent className="p-4">
-          <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-3 flex-wrap w-full">
             {/* Filter Dropdowns */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -390,7 +390,7 @@ const HRAdminManagement = () => {
             </DropdownMenu>
 
             {/* Search Input */}
-            <div className="flex-1 min-w-[200px]">
+            <div className="flex-1 min-w-[200px] max-w-full">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
@@ -414,8 +414,8 @@ const HRAdminManagement = () => {
 
       <Card className="border-0 shadow-xl shadow-black/5 bg-white/80 backdrop-blur-xl rounded-3xl overflow-hidden">
         <CardContent className="p-0">
-          <div className="overflow-x-auto">
-            <Table>
+          <div className="w-full overflow-x-auto" style={{ maxWidth: '100%' }}>
+            <Table className="w-full table-auto">
               <TableHeader>
                 <TableRow className="bg-[#03093a]/5 border-b border-[#03093a]/10">
                   <TableHead className="font-semibold text-foreground/80 w-12">
