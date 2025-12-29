@@ -489,7 +489,7 @@ const HRAdminManagement = () => {
                     <TableCell className="whitespace-nowrap">
                       <div className="flex items-center gap-2">
                         <Badge className={cn(
-                          "rounded-full px-2.5 py-0.5 text-xs font-medium h-5 flex items-center justify-center",
+                          "rounded-full px-2 py-0.5 text-xs font-medium h-5 flex items-center justify-center",
                           hrAdmin.status === "Active"
                             ? "bg-[#03093a] text-white"
                             : "bg-[#ee3127] text-white"

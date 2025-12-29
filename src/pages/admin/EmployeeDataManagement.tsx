@@ -362,7 +362,7 @@ const EmployeeDataManagement = () => {
                       <TableCell className="text-muted-foreground whitespace-nowrap">{employee.branch}</TableCell>
                       <TableCell className="whitespace-nowrap">
                         <Badge className={cn(
-                          "rounded-full px-2.5 py-0.5 text-xs font-medium h-5 flex items-center justify-center",
+                          "rounded-full px-2 py-0.5 text-xs font-medium h-5 flex items-center justify-center",
                           getStatusBadgeColor(employee.status)
                         )}>
                           {employee.status}

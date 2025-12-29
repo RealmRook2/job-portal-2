@@ -181,7 +181,7 @@ const AdminLayout = () => {
         {/* Left Floating Sidebar - Matching Image */}
         <aside
           className={cn(
-            "fixed top-[3.75rem] left-4 h-[calc(100vh-4.5rem)] bg-white border border-gray-100 z-40 transition-all duration-300 rounded-xl shadow-2xl",
+            "fixed top-[3.75rem] left-4 h-[calc(100vh-4.5rem)] bg-white border border-gray-100 z-40 transition-all duration-300 rounded-xl shadow-2xl flex flex-col overflow-hidden",
             sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0",
             sidebarCollapsed ? "w-[80px]" : "w-72"
           )}
@@ -192,26 +192,26 @@ const AdminLayout = () => {
           } : undefined}
         >
           {/* Collapse/Expand Button */}
-          <div className="p-3 border-b border-gray-100 flex justify-end">
+          <div className="p-2 border-b border-gray-100 flex justify-end">
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-8 w-8 rounded-lg hover:bg-gray-50 transition-all duration-200"
+                className="h-7 w-7 rounded-lg hover:bg-gray-50 transition-all duration-200"
                 onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
               title={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
               >
               {sidebarCollapsed ? (
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className="w-3.5 h-3.5" />
               ) : (
-                <ChevronLeft className="w-4 h-4" />
+                <ChevronLeft className="w-3.5 h-3.5" />
               )}
               </Button>
             </div>
 
-          <ScrollArea className={cn("transition-all duration-300", sidebarCollapsed ? "h-[calc(100%-5rem)]" : "h-[calc(100%-5rem)]")}>
+          <div className={cn("transition-all duration-300 flex-1 overflow-hidden flex flex-col", sidebarCollapsed ? "h-[calc(100%-3.5rem)]" : "h-[calc(100%-3.5rem)]")}>
             <nav className={cn(
-              "transition-all duration-300",
-              sidebarCollapsed ? "p-2 space-y-1.5" : "p-4 space-y-2"
+              "transition-all duration-300 flex-1 overflow-hidden",
+              sidebarCollapsed ? "p-1.5 space-y-1" : "p-2 space-y-1"
             )}>
               {menuItems.map((item) => {
                 const Icon = item.icon;
@@ -223,7 +223,7 @@ const AdminLayout = () => {
                     onClick={() => setSidebarOpen(false)}
                     className={cn(
                       "flex items-center rounded-lg transition-all duration-200 group relative",
-                      sidebarCollapsed ? "justify-center py-3 w-full mx-auto" : "gap-3 px-4 py-3",
+                      sidebarCollapsed ? "justify-center py-2 w-full mx-auto" : "gap-2 px-3 py-2",
                       isActive(item.path)
                         ? "bg-primary text-primary-foreground font-semibold"
                         : "text-foreground/70 hover:bg-secondary hover:text-foreground font-medium"
@@ -232,15 +232,15 @@ const AdminLayout = () => {
                   >
                     <div className="relative flex-shrink-0">
                       <div className={cn(
-                        "p-2 rounded-xl transition-all duration-200",
+                        "p-1.5 rounded-lg transition-all duration-200",
                         isActive(item.path) 
                           ? "bg-primary-foreground/10" 
                           : "bg-transparent group-hover:bg-primary/5"
                       )}>
                         <Icon className={cn(
-                          "w-5 h-5 transition-all duration-200",
+                          "w-4 h-4 transition-all duration-200",
                           isActive(item.path) ? "text-primary-foreground" : "text-foreground/70 group-hover:text-foreground"
-                        )} strokeWidth={2.5} />
+                        )} strokeWidth={2} />
                       </div>
                       {hasCount && (
                         <Badge 
@@ -262,7 +262,7 @@ const AdminLayout = () => {
                     {!sidebarCollapsed && (
                       <>
                         <span className={cn(
-                          "text-sm tracking-tight flex-1 transition-colors",
+                          "text-xs tracking-tight flex-1 transition-colors",
                           isActive(item.path) ? "text-primary-foreground font-semibold" : "text-foreground/70 group-hover:text-foreground"
                         )}>
                           {item.label}
@@ -276,7 +276,7 @@ const AdminLayout = () => {
                 );
               })}
             </nav>
-          </ScrollArea>
+          </div>
         </aside>
 
         {/* Overlay for mobile */}

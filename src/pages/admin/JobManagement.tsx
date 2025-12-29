@@ -400,15 +400,15 @@ const JobManagement = () => {
                     <TableCell className="text-muted-foreground group-hover:text-foreground/80 transition-colors max-w-xs">{job.location}</TableCell>
                     <TableCell className="whitespace-nowrap">
                       <Badge className={cn(
-                        "rounded-full px-3 py-1 text-xs font-semibold h-6 flex items-center justify-center gap-1.5 shadow-sm transition-all group-hover:scale-110",
+                        "rounded-full px-2 py-0.5 text-xs font-medium h-5 flex items-center justify-center gap-1 shadow-sm transition-all",
                         job.status === "Open" 
                           ? "bg-gradient-to-r from-[#03093a] to-[#03093a]/90 text-white border border-[#03093a] shadow-[#03093a]/20" 
                           : "bg-gradient-to-r from-[#ee3127] to-[#ee3127]/90 text-white border border-[#ee3127] shadow-[#ee3127]/20"
                       )}>
                         {job.status === "Open" ? (
-                          <CheckCircle2 className="w-3.5 h-3.5" />
+                          <CheckCircle2 className="w-3 h-3" />
                         ) : (
-                          <XCircle className="w-3.5 h-3.5" />
+                          <XCircle className="w-3 h-3" />
                         )}
                         {job.status}
                       </Badge>

@@ -442,7 +442,7 @@ const InterviewManagement = () => {
                             toast.success(`Interview status updated to ${value}`);
                           }}
                         >
-                          <SelectTrigger className="w-36 h-10 rounded-xl border-border/30 bg-white hover:border-[#03093a]/30 focus:border-[#03093a]">
+                          <SelectTrigger className="w-28 h-8 rounded-xl border-border/30 bg-white hover:border-[#03093a]/30 focus:border-[#03093a] text-xs">
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent className="rounded-xl shadow-lg border-border/30 bg-white/80 backdrop-blur-xl">
@@ -463,7 +463,7 @@ const InterviewManagement = () => {
                             toast.success(`Onboarding status updated to ${value}`);
                           }}
                         >
-                          <SelectTrigger className="w-36 h-10 rounded-xl border-border/30 bg-white hover:border-[#03093a]/30 focus:border-[#03093a]">
+                          <SelectTrigger className="w-28 h-8 rounded-xl border-border/30 bg-white hover:border-[#03093a]/30 focus:border-[#03093a] text-xs">
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent className="rounded-xl shadow-lg border-border/30 bg-white/80 backdrop-blur-xl">

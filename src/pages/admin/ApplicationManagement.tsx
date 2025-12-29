@@ -422,7 +422,7 @@ const ApplicationManagement = () => {
                           value={app.status}
                           onValueChange={(value) => handleStatusChange(app.id, value)}
                         >
-                          <SelectTrigger className="w-36 h-10 rounded-xl border-border/30 bg-white hover:border-[#03093a]/50 focus:border-[#03093a] transition-all duration-200 group-hover:border-[#ee3127]/40">
+                          <SelectTrigger className="w-28 h-8 rounded-xl border-border/30 bg-white hover:border-[#03093a]/50 focus:border-[#03093a] transition-all duration-200 group-hover:border-[#ee3127]/40 text-xs">
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent className="rounded-xl shadow-lg border-border/30 bg-white/80 backdrop-blur-xl">

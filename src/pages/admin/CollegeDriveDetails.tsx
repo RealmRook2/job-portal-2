@@ -431,7 +431,7 @@ const CollegeDriveDetails = () => {
                               </Badge>
                             </TableCell>
                             <TableCell>
-                              <Badge className={`rounded-full border ${getStatusColor(student.status)}`}>
+                              <Badge className={`rounded-full border px-2 py-0.5 text-xs font-medium h-5 flex items-center justify-center ${getStatusColor(student.status)}`}>
                                 {student.status}
                               </Badge>
                             </TableCell>
