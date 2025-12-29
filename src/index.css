@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Ultra Clean Minimalistic Color Palette - Matching Image */
+    --background: 0 0% 99.5%; /* Almost Pure White - Very Light Gray */
+    --foreground: 0 0% 0%; /* Pure Black #000000 */
+
+    --card: 0 0% 100%; /* Pure White */
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 234 90% 12%; /* Blue #03093a */
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-light: 234 85% 18%;
+    --primary-dark: 234 95% 8%;
+
+    --secondary: 0 0% 97%; /* Very Light Gray */
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 95%; /* Light Gray */
+    --muted-foreground: 0 0% 50%; /* Medium Gray for text */
+
+    --accent: 234 90% 12%; /* Blue #03093a */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 3 85% 54%; /* Red #ee3127 */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 92%; /* Very Light Border - Almost invisible */
+    --input: 0 0% 92%;
+    --ring: 234 90% 12%; /* Blue Ring */
+
+    --radius: 1.25rem; /* More rounded corners - rounded-xl feel */
+    
+    --glass-bg: 0 0% 100% / 0.98;
+    --glass-border: 0 0% 0% / 0.05;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(234 90% 12%) 0%, hsl(234 85% 18%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 99.5%) 100%);
+    
+    /* Ultra minimal shadows - almost imperceptible */
+    --shadow-sm: 0 1px 1px 0 rgb(0 0 0 / 0.02);
+    --shadow-md: 0 1px 3px 0 rgb(0 0 0 / 0.03);
+    --shadow-lg: 0 2px 6px 0 rgb(0 0 0 / 0.04);
+    --shadow-xl: 0 4px 12px 0 rgb(0 0 0 / 0.05);
+    --shadow-glass: 0 2px 8px 0 rgba(0, 0, 0, 0.03);
+    
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 234 90% 12%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 234 90% 12%;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-md);
+    border-radius: 1rem;
+  }
+  
+  .modern-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: var(--transition-smooth);
+  }
+  
+  .modern-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .minimal-card {
+    background: white;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .minimal-card:hover {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+  
+  .dashboard-card {
+    background: white;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+  }
+  
+  .dashboard-card:hover {
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.03);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    min-height: 100vh;
+  }
+}
