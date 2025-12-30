@@ -205,7 +205,7 @@ const AdminDashboardNew = () => {
         className="pb-4 border-b border-border/40"
       >
         <h1 
-          className="text-4xl font-normal mb-2 text-foreground tracking-tight"
+          className="text-4xl font-bold mb-2 text-foreground tracking-tight"
           style={{ fontFamily: 'system-ui, -apple-system, "SF Pro Display", sans-serif', letterSpacing: '-0.02em' }}
         >
           Admin Dashboard

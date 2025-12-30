@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,8 @@ import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
 
 const Chat = () => {
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith("/admin");
   const [selectedChat, setSelectedChat] = useState(1);
   const [message, setMessage] = useState("");
 
@@ -83,22 +86,22 @@ const Chat = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <div className={isAdminRoute ? "h-full" : "min-h-screen bg-background"}>
+      {!isAdminRoute && <Navbar />}
       
-      <div className="pt-24 pb-12 px-6">
-        <div className="max-w-7xl mx-auto">
+      <div className={isAdminRoute ? "h-full" : "pt-24 pb-12 px-6"}>
+        <div className={isAdminRoute ? "h-full flex flex-col" : "max-w-7xl mx-auto"}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-8"
+            className={isAdminRoute ? "mb-6" : "mb-8"}
           >
-            <h1 className="text-4xl font-bold mb-4">Chat with HR</h1>
-            <p className="text-xl text-muted-foreground">Connect with HR professionals from Chennai</p>
+            <h1 className={isAdminRoute ? "text-3xl font-bold mb-2" : "text-4xl font-bold mb-4"}>Chat with HR</h1>
+            <p className={isAdminRoute ? "text-base text-muted-foreground" : "text-xl text-muted-foreground"}>Connect with HR professionals from Chennai</p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-4 gap-6">
+          <div className={isAdminRoute ? "grid lg:grid-cols-4 gap-6 flex-1 min-h-0" : "grid lg:grid-cols-4 gap-6"}>
             {/* Sidebar - HR List */}
             <Card className="apple-card border-0 lg:col-span-1">
               <CardContent className="p-0">
@@ -151,7 +154,7 @@ const Chat = () => {
 
             {/* Chat Window */}
             <Card className="apple-card border-0 lg:col-span-3">
-              <CardContent className="p-0 flex flex-col h-[600px]">
+              <CardContent className="p-0 flex flex-col" style={{ height: isAdminRoute ? "100%" : "600px" }}>
                 {/* Chat Header */}
                 <div className="p-4 border-b flex items-center justify-between">
                   <div className="flex items-center gap-3">
