@@ -9,7 +9,9 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Logo variant="full" linkTo="/" className="group-hover:scale-105 transition-transform" />
+        <div className="flex items-center h-full">
+          <Logo variant="default" linkTo="/" className="group-hover:scale-105 transition-transform" />
+        </div>
 
         <div className="hidden md:flex items-center gap-8">
           <Link
